@@ -674,14 +674,35 @@
 
       .items {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 8px;
         padding: 12px;
+      }
+
+      /* 이름이 긴 항목은 한 줄을 통째로 써서 글씨가 안 뭉개지게 */
+      .item.wide {
+        grid-column: 1 / -1;
+        grid-template-columns: minmax(0, 1fr) auto;
+        justify-items: start;
+        align-items: center;
+        text-align: left;
+        gap: 12px;
+        min-height: 52px;
+        padding: 10px 14px;
+      }
+
+      .item.wide .item-label {
+        text-align: left;
+      }
+
+      .item.wide .item-price {
+        justify-self: end;
       }
 
       .item {
         position: relative;
         display: grid;
+        grid-template-columns: minmax(0, 1fr);
         gap: 4px;
         align-content: center;
         justify-items: center;
@@ -740,10 +761,12 @@
       }
 
       .item-price {
+        max-width: 100%;
         color: var(--red-2);
         font-size: 1rem;
         font-weight: 1000;
-        white-space: nowrap;
+        line-height: 1.25;
+        overflow-wrap: anywhere;
       }
 
       .item.selected .item-price {
@@ -1519,109 +1542,248 @@
     </div>
 
     <script type="text/plain" id="rawPriceText">
-★모든장비 문의★
-▶세트부적 및 전설문장◀
-삼중의 / 도가니 / 호라존 / 메피스 / 이름없는자 등등 모든 부적세트
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 
-★개별 문의 주세요★
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-★★지하도시 신화병기공물
-대기시간 : 스피드 / (신화템1~6개 랜덤드랍)
+💜 모든부적. 모든템. 모든위상 💜
 
-1회 - 4,000원
-5회 - 16,000원
-10회 - 27,000원
-20회 - 48,000원
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▶잊힌영혼 (바닥거래)
-1000개 = 7,000원
-3000개 = 18,000원
-5000개 = 30,000원
-▶옵두버스
-1만개 = 5,000원
-3만개 = 12,000원
-5만개 = 18,000원
-10만개 = 34,000원
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▶금화 (골드 소지한도 999억)
-200억 = 8,000원
-300억 = 10,000원
-500억 = 16,000원
-900억 = 28,000원
-▶벨리알 (배신자껍데기)
-50개 = 15,000원
-100개 = 24,000원
-200개 = 44,000원
-300개 = 64,000원
-▶강철 / 극피
-500개 = 10,000원
-1000개 = 18,000원
-▶하급 소굴열쇠
-100개 = 6,000원
-200개 =11,000원
-300개 =16,000원
-500개 = 27,000원
-1000개 = 45,000원
-▶상급 소굴열쇠
-100개 = 12,000원
-200개 = 20,000원
-500개 = 45,000원
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▶분광경
-☆--쿨레 조율의 분광경
-100개 = 10,000원
-300개 = 24,000원
-☆--엔트로피/공격적인/숙련자의/다채로운 등등
-300개당 = 10,000원
-▶선지자 십자가 (메피스토비축고)
-10개 = 12,000원
-20개 = 23,000원
-30개 = 35,000원
-40개 = 45,000원
-50개 = 55,000원
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▶룬세트 (1세트 = 6+6+6)
-수의셋 (바크6 녹6 모니6)
-샤코셋 (에옴6 라크6 세흐6)
-영벌셋 (자6 쿠에6 가르6)
-별반셋 (오움6 와트6 쳄6)
-한아비셋 (탐6 모트6 약스6)
-티리엘셋 (욤6 나구6 치크6)
-셀리그셋 (벡스6주울6크라이6)
+💚디아4 실시간 최저가 바로 반영💚
 
-룬 1세트 = 5,000원
-룬 3세트 = 9,000원
-룬 5세트 = 13,000원
-룬 10세트 = 19,000원
+💚모든 템 (전설&고유 1~4어픽 판매)💚
 
-※ 기타 개별룬 문의주세요
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▶웅장한보석
-10개 = 5,000원
-20개 = 8,000원
-50개 = 15,000원
-100개 = 25,000원
-200개 = 50,000원
-★온전한 호라드림 보석
-1개 = 7,000원
-5개 = 30,000원
-10개 = 55,000원
-20개 = 100,000원
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-▶대행or레벨링 서비스
-70레벨 만렙 버스 = 8,000원
-70레벨 + 정복자 50 = 15,000원
-70레벨 + 정복자 100 = 25,000원
-70레벨 + 정복자 150 = 65,000원
-70레벨 + 정복자 200 = 120,000원
-나락100단 1시간당 = 10,000원
-고행12 메피스토 (재료 키 포함) = 5회 = 18,000 / 10회 = 32,000원 / 20회 = 54,000원
+💚모든 클래스 위상 상옵 or Max 판매💚
+
+💚모든 부적세트 or 문장 판매💚
+도가니. 상중. 주문강철. 폭풍인도자. 붉은늑대
+보이지않는자.  등  모든 부적세트 문장  문의주세요
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛악마술사 세트💛
+(고유 11종 / 900위력)
+레오릭 왕관 (투구) = 3,000원
+지옥불 호문쿨루스 (중심점) = 3,000원
+지옥사냥개의 발덮개 (장화)  = 3,000원
+극치의 손 (장갑) = 3,000원
+인검 (무기) = 3,000원
+비가 (무기) = 3,000원
+만용 (바지) = 3,000원
+여덟점의 우상 (고유반지) = 3,000원
+몰로크의 퍼덕이는 불길 (목걸이) = 3,000원
+웬디고의 반지 (반지) = 3,000원
+요르단 반지 (반지) = 3,000원
+수수께끼 룬세트+갑옷 베이스= 3,000원
+위 항목 8종 선택 = 20,000원
+위 항목 전부 12종 전부 = 30,000원
+개별구매 가능
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛악마술사 부적세트💛
++3스킬 아바돈문장 x 4 + 아바돈불 횃불스킬 + 
+6칸 호라드림문장 아바돈 효과 =15,000원
+
++4스킬(어픽) 아바돈문장 x 4 + 아바돈불 횃불스킬 + 
+6칸 호라드림문장 아바돈 효과 =35,000원
+
+-- 템 12종 +3스킬 부적세트-40,000원 
+-- 템 12종 +4스킬 부적세트=60,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛벼락불 (바닥거래)💛
+-- 50개 = 4,000원
+-- 100개 = 8,000원
+-- 200개 = 16,000원
+-- 500개 = 36,000원
+-- 1000개 = 70,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛횃불부적 판매💛 
+-- 아이템 위력900 
+-- 모든스킬+5 (1어픽)
+-- 모든스킬+5 모든 능력치 (2어픽)
+-- 모든스킬+5 모든 능력치 모든저항 (3어픽)
+-- 상세 어픽조합 세트효과 문의주세요
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛횃불런 버스💛 
+-- 1시간 = 7,000원
+-- 2시간 = 13,000원
+-- 3시간 = 19,000원
+-- 횃불 확정드랍
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛바알런 버스💛 
+-- 10회 = 8,000원
+-- 20회 = 15,000원
+-- 30회 = 22,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛골드💛 
+-- 1000억 = 2,000원
+-- 3000억 = 6,000원
+-- 5000억 = 9,000원
+-- 9000억 = 17,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛온전한 호라드림 보석 (종류 선택가능) 💛 
+-- 1개 = 2,000원
+-- 5개 = 10,000원
+-- 10개 = 20,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛일반. 상급 소굴열쇠💛 
+-- 100개 = 3,000원
+-- 300개 = 7,000원
+-- 500개 = 12,000원
+-- 1000개 = 23,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛고급 소굴열쇠💛 
+-- 100개 = 4,000원
+-- 300개 = 12,000원
+-- 500개 = 19,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛타락한 뿌리💛
+-- 10개 = 3,000원
+-- 30개 = 9,000원
+-- 50개 = 14,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛쿨레 분광경💛
+-- 50개 = 3,000원
+-- 100개 = 5,000원
+-- 200개 = 9,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛엔트/공격/숙련/다채/풍족/보호/실용💛
+-- 100개 = 1,500원
+-- 500개 = 7,000원
+-- 1000개 = 13,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛선지자 십자가💛
+-- 10개 = 9,000원
+-- 30개 = 25,000원
+-- 50개 = 43,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛웅장한 보석 (종류 선택가능)💛 
+-- 1개 = 1,000원
+-- 5개 = 5,000원
+-- 10개 = 9,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛호라드림 보석 (종류 선택가능)💛 
+-- 1개 = 2,000원
+-- 5개 = 10,000원
+-- 10개 = 20,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛각종 룬세트 (섞어가능) 💛 
+-- 템 부위 룬세트 (장갑. 갑옷. 무기 등등) 1set= 3,000원
+--  수수께끼 룬 + 갑옷 베이스 = 3,000원
+--  통찰 룬세트 = 3,000원
+--  영혼 룬세트 = 3,000원
+--  잠행 룬세트 = 3,000원
+--  모든 룬세트 = 3,000원
+--  선택 5set = 11,000원
+--  선택 10set = 20,000원
+--  선택 20set = 38,000원
+
+-- 개별룬 1개당 = 1,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+💛잊힌영혼 (바닥거래)💛
+-- 3000개 = 8,000원
+-- 5000개 = 12,000원
+-- 10000개 = 22,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+❤️옵두 버스❤️
+-- 3만 = 8,000원
+-- 5만 = 10,000원
+-- 10만 = 18,000원
+-- 20만 = 34,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+❤️신화병기 공물 버스 (바로출발 대기X)❤️
+-- 1판 = 8,000원
+-- 5판 = 38,000원
+-- 판당 신화템 0-4개 랜덤 드랍
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+❤️고행12 메피스토 (키. 재료포함)❤️
+-- 1판 = 4,000원
+-- 5판 = 16,000원
+-- 10판 =28,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+❤️각종 우버보스 버스❤️
+-- 타락사신. 벨리알.듀리엘.바르샨.야수.안다.지르
+-- 10판 = 15,000원 (재료포함)
+-- 20판 = 28,000원 (재료포함)
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+❤️렙업 정복자 버스 or 대행❤️
+
+-- 고행12뚫 = 2,000원
+-- 70렙 만렙 버스 = 5,000원
+-- 70렙+정복자50 = 8,000원
+-- 70렙+정복자100 = 15,000원
+-- 70렙+정복자150 = 40,000원
+-- 70렙+정복자200 = 80,000원
+-- 고행8-12 릴리트 1회 = 2,000원
+
+-- 나락 100단 문양업 버스 1시간당 = 10,000원
+-- 나락 120단 문양업 버스 1시간당 = 14,000원
+-- 나락 150단 문양업 버스 1시간당 = 20,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+❤️시즌여정 or 캠페인❤️
+-- 시즌 캠페인 챕터8 전부 = 70,000원
+-- 시즌여정 9단계 전부 = 100,000원
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+❤️1티어 플세팅 (모든 클래스 빌드)❤️
+-- 가성비세팅 = 60,000원 (나락80단 스피드파밍 스펙)
+-- 중급세팅 = 100,000원 (나락100단 스피드파밍 스펙)
+-- 엔드세팅 = 220,000원 (나락120단 스피드파밍 스펙)
+(신화템5~6개+담금질+명품화+문양100렙+부적+변성)
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
     </script>
 
     <script>
       // ── 루피상점 기본 설정 ─────────────────────────────────────────────
+      // 이모지(그림문자) 판별용 — 제목 표시로 쓰입니다
+      const EMOJI_ALL = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{2764}\u{2B50}]/gu;
+      const EMOJI_START = /^[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{2764}\u{2B50}]/u;
+
       const defaultSiteSettings = {
-        notice: "",
         // 1:1 오픈카톡 주소는 여기 적거나, 관리자 화면에서 저장해도 됩니다. 비워두면 버튼이 숨겨집니다.
         kakaoOneUrl: ""
       };
@@ -1805,13 +1967,17 @@
       const passwordInput = document.querySelector("#passwordInput");
       const loginHint = document.querySelector("#loginHint");
       const priceEditor = document.querySelector("#priceEditor");
-      const noticeEditor = document.querySelector("#noticeEditor");
       const kakaoOneEditor = document.querySelector("#kakaoOneEditor");
 
       let activeCategory = "전체";
       let serverSession = false;
-      // 관리자 API 가 없는 환경(정적 미리보기)에서는 비밀번호 없이 로컬 모드로 편집. 저장은 이 브라우저(localStorage)에만 남음.
+      // 내 컴퓨터에서 미리보기로 열었을 때만(서버 없음) 비밀번호 없이 편집 가능. 저장은 이 브라우저에만 남음.
+      // 실제 배포 주소에서는 절대 열리지 않습니다 — 항상 비밀번호를 물어봅니다.
       const LOCAL_ADMIN_KEY = "wooki:local-admin:v1";
+      const isLocalPreview =
+        location.protocol === "file:" ||
+        ["localhost", "127.0.0.1", "[::1]", "::1"].includes(location.hostname) ||
+        location.hostname.endsWith(".localhost");
       let apiAvailable = null;
       let localMode = false;
 
@@ -1872,6 +2038,7 @@
       }
 
       function loadLocalPriceText() {
+        if (!isLocalPreview) return;
         try {
           const saved = JSON.parse(localStorage.getItem(LOCAL_ADMIN_KEY) || "null");
           if (!saved) return;
@@ -1888,12 +2055,7 @@
           )
         };
 
-        document.querySelectorAll("[data-notice-line]").forEach((line) => {
-          line.textContent = siteSettings.notice;
-        });
         applyKakaoLink("#kakaoOneLink", siteSettings.kakaoOneUrl);
-
-        if (noticeEditor) noticeEditor.value = siteSettings.notice;
         if (kakaoOneEditor) kakaoOneEditor.value = siteSettings.kakaoOneUrl;
       }
 
@@ -1906,7 +2068,6 @@
 
       function readSiteSettingsFromEditor() {
         return {
-          notice: noticeEditor ? noticeEditor.value.trim() : siteSettings.notice,
           kakaoOneUrl: kakaoOneEditor.value.trim()
         };
       }
@@ -1997,7 +2158,7 @@
 
       function openAdminModal() {
         adminModal.classList.add("open");
-        if (apiAvailable === false) {
+        if (isLocalPreview && apiAvailable === false) {
           enterLocalMode();
           return;
         }
@@ -2028,12 +2189,12 @@
 
           if (!response.ok) {
             const isJson = (response.headers.get("content-type") || "").includes("application/json");
-            if (!isJson) {
+            if (!isJson && isLocalPreview) {
               apiAvailable = false;
               enterLocalMode();
               return;
             }
-            loginHint.textContent = await describeApiError(response, "비밀번호가 다릅니다.");
+            loginHint.textContent = "비밀번호가 다릅니다.";
             return;
           }
 
@@ -2047,27 +2208,15 @@
         }
       }
 
-      // 서버가 아예 없으면(정적 미리보기 등) JSON 이 아닌 404 가 오므로 상황을 구분해서 안내
-      async function describeApiError(response, fallback) {
-        const isJson = (response.headers.get("content-type") || "").includes("application/json");
-        if (!isJson) {
-          return "관리자 서버가 없어요. Cloudflare Pages에 배포한 뒤(ADMIN_PASSWORD·SESSION_SECRET·WOOKI_KV 설정) 사용할 수 있습니다.";
-        }
-        try {
-          const data = await response.json();
-          if (data && data.error) return data.error;
-        } catch {}
-        return fallback;
-      }
-
       function enterLocalMode() {
+        if (!isLocalPreview) return;
         localMode = true;
         serverSession = false;
         passwordPanel.style.display = "none";
         adminPanel.classList.add("open");
         applySiteSettings(siteSettings);
         priceEditor.value = currentPriceText || rawPriceText;
-        showToast("미리보기 모드로 열었어요. 저장하면 이 브라우저에만 기억됩니다.");
+        showToast("저장하면 이 브라우저에만 기억됩니다.");
       }
 
       async function savePriceText() {
@@ -2080,7 +2229,7 @@
           applySiteSettings(settings);
           applyPriceText(text);
           refreshPriceView();
-          showToast("이 브라우저에 저장했어요. 실제 사이트는 Cloudflare 배포 후 관리자 저장으로 반영돼요.");
+          showToast("이 브라우저에 저장했어요.");
           return;
         }
 
@@ -2101,7 +2250,7 @@
             body: JSON.stringify({ text, settings })
           });
 
-          if (!response.ok) throw new Error(await describeApiError(response, "저장에 실패했습니다."));
+          if (!response.ok) throw new Error("저장에 실패했습니다.");
           applySiteSettings(settings);
           applyPriceText(text);
           refreshPriceView();
@@ -2170,8 +2319,9 @@
                   ${section.items
                     .map(([label, price]) => {
                       const id = makeId(section.title, label, price);
+                      const wide = label.length > 18 ? " wide" : "";
                       return `
-                        <button class="item ${cart.has(id) ? "selected" : ""}" type="button" data-id="${escapeHtml(id)}" data-title="${escapeHtml(section.title)}" data-label="${escapeHtml(label)}" data-price="${escapeHtml(price)}">
+                        <button class="item${wide} ${cart.has(id) ? "selected" : ""}" type="button" data-id="${escapeHtml(id)}" data-title="${escapeHtml(section.title)}" data-label="${escapeHtml(label)}" data-price="${escapeHtml(price)}">
                           <span class="item-label">${escapeHtml(label)}</span>
                           <span class="item-price">${escapeHtml(price)}</span>
                         </button>
@@ -2364,116 +2514,110 @@
         setTimeout(() => toast.classList.remove("show"), 2200);
       }
 
-      function parseRawPriceText(text) {
-        const sections = [];
-        let current = null;
+      // 줄 끝이 + 나 , 로 끝나면 다음 줄과 이어붙임 (한 항목을 여러 줄로 쓴 경우)
+      function joinWrappedLines(lines) {
+        const out = [];
+        for (const line of lines) {
+          if (out.length && /[+,]$/.test(out[out.length - 1]) && !isSeparatorLine(line)) {
+            out[out.length - 1] = `${out[out.length - 1]} ${line}`.replace(/\s{2,}/g, " ");
+            continue;
+          }
+          out.push(line);
+        }
+        return out;
+      }
 
-        const lines = String(text)
-          .replace(/\r/g, "")
-          .split("\n")
-          .map((line) => line.trim())
-          .filter(Boolean);
+      // 구분선(＊＊＊ / ㅡㅡㅡ)으로 덩어리를 나눈다
+      function splitBlocks(text) {
+        const lines = joinWrappedLines(
+          String(text)
+            .replace(/\r/g, "")
+            .split("\n")
+            .map((line) => line.trim())
+            .filter(Boolean)
+        );
 
-        const hasSeparator = lines.some(isSeparatorLine);
-        let priceStarted = !hasSeparator;
-
+        const blocks = [];
+        let current = [];
         for (const line of lines) {
           if (isSeparatorLine(line)) {
-            priceStarted = true;
-            commitSection();
+            if (current.length) blocks.push(current);
+            current = [];
             continue;
           }
+          current.push(line);
+        }
+        if (current.length) blocks.push(current);
+        return blocks;
+      }
 
-          if (!priceStarted) continue;
+      // 맨 앞에 가격이 하나도 없는 덩어리가 있으면 그건 상단 안내글
+      function splitIntro(blocks) {
+        if (blocks.length > 1 && !blocks[0].some(hasPrice)) {
+          return { intro: blocks[0], rest: blocks.slice(1) };
+        }
+        return { intro: [], rest: blocks };
+      }
 
-          const rows = parsePriceLines(line);
-          if (rows.length) {
-            ensureSection("기타 상품");
-            current.items.push(...rows);
-            continue;
-          }
+      function parseRawPriceText(text) {
+        const sections = [];
+        const { rest } = splitIntro(splitBlocks(text));
 
-          if (isSectionTitle(line)) {
-            const title = cleanTitle(line);
-            if (!title) continue;
+        for (const block of rest) {
+          let current = null;
 
-            if (!current) {
+          for (const line of block) {
+            if (isSectionTitle(line)) {
+              const title = cleanTitle(line);
+              if (!title) continue;
+              commit();
               current = createSection(title);
               continue;
             }
 
-            if (!current.items.length && !current.notes.length && !current.subtitle) {
-              const previousTitle = current.title;
-              current = createSection(title);
-              current.subtitle = previousTitle;
+            const rows = parsePriceLines(line);
+            if (rows.length) {
+              if (!current) current = createSection("기타 상품");
+              current.items.push(...rows);
               continue;
             }
 
-            commitSection();
-            current = createSection(title);
-            continue;
+            const note = cleanNote(line);
+            if (!note) continue;
+            if (!current) current = createSection("안내");
+            if (!current.subtitle && !current.items.length) current.subtitle = note;
+            else current.notes.push(note);
           }
 
-          ensureSection("안내");
-          addSectionNote(line);
+          commit();
+
+          function commit() {
+            if (!current) return;
+            if (current.items.length || current.subtitle || current.notes.length) sections.push(current);
+            current = null;
+          }
         }
 
-        commitSection();
         return sections;
-
-        function ensureSection(title) {
-          if (!current) current = createSection(title);
-        }
-
-        function addSectionNote(line) {
-          const note = cleanNote(line);
-          if (!note) return;
-          if (!current.subtitle) current.subtitle = note;
-          else current.notes.push(note);
-        }
-
-        function commitSection() {
-          if (!current) return;
-          if (current.items.length || current.subtitle || current.notes.length) {
-            sections.push(current);
-          }
-          current = null;
-        }
       }
 
       function parseRawNoticeText(text) {
-        const lines = String(text)
-          .replace(/\r/g, "")
-          .split("\n")
-          .map((line) => line.trim())
-          .filter(Boolean);
-
-        const noticeLines = [];
-        for (const line of lines) {
-          if (isSeparatorLine(line)) break;
-          noticeLines.push(line);
-        }
-
+        const { intro } = splitIntro(splitBlocks(text));
         const notices = [];
         let current = null;
 
-        for (const line of noticeLines) {
-          if (/^★/.test(line)) {
+        for (const line of intro) {
+          const clean = cleanTitle(line);
+          if (!clean) continue;
+
+          if (/^★/.test(line) || EMOJI_START.test(line)) {
             commitNotice();
-            current = {
-              title: cleanTitle(line),
-              notes: []
-            };
+            current = { title: clean, notes: [] };
             continue;
           }
 
-          if (!current) {
-            current = {
-              title: "안내",
-              notes: []
-            };
-          }
-          current.notes.push(cleanTitle(line));
+          if (!current) current = { title: "안내", notes: [] };
+          current.notes.push(clean);
         }
 
         commitNotice();
@@ -2481,12 +2625,22 @@
 
         function commitNotice() {
           if (!current || !current.title) return;
-          if (!current.notes.length && /개별\s*문의/.test(current.title)) {
-            current.notes.push("가격표에 없는 품목은 카톡방으로 문의해주세요.");
-          }
           notices.push(current);
           current = null;
         }
+      }
+
+      // "60,000원 (나락80단 스피드파밍 스펙)" 처럼 값 뒤에 설명이 붙으면
+      // 값에서 떼어내 품목 이름 뒤로 옮깁니다. (안 그러면 값 칸이 넘칩니다)
+      function splitPriceNote(label, price) {
+        const text = String(price || "").trim();
+        const match = text.match(/^([^\d]*\d[\d,]*\s*원)\s*(.*)$/);
+        if (!match) return [label, text];
+
+        const money = match[1].trim();
+        const note = match[2].trim().replace(/^[·\-–—,]\s*/, "");
+        if (!note) return [label, money];
+        return [`${label} ${note}`.replace(/\s{2,}/g, " ").trim(), money];
       }
 
       function parsePriceLine(line) {
@@ -2495,12 +2649,12 @@
 
         const equalIndex = clean.indexOf("=");
         if (equalIndex > -1) {
-          return [clean.slice(0, equalIndex).trim(), normalizePrice(clean.slice(equalIndex + 1).trim())];
+          return splitPriceNote(clean.slice(0, equalIndex).trim(), normalizePrice(clean.slice(equalIndex + 1).trim()));
         }
 
         const dashMatch = clean.match(/^(.+?)\s*[-–—]\s*(.+)$/);
         if (dashMatch) {
-          return [dashMatch[1].trim(), dashMatch[2].trim()];
+          return splitPriceNote(dashMatch[1].trim(), normalizePrice(dashMatch[2].trim()));
         }
 
         return [clean.replace(/\d[\d,]*\s*원.*$/, "").trim() || "상품", clean.match(/\d[\d,]*\s*원.*$/)?.[0] || "상담"];
@@ -2536,11 +2690,19 @@
         return price;
       }
 
+      // 제목으로 볼 줄: 값이 없으면서 ▶ ★ 로 시작하거나, 이모지(💛❤️💚💜 등)로 시작하는 줄
       function isSectionTitle(line) {
         const clean = line.trim();
+        if (!clean) return false;
         if (/^☆/.test(clean)) return false;
-        if (/개별\s*문의/.test(clean)) return false;
-        return /^▶/.test(clean) || /^★/.test(clean);
+        if (/^--/.test(clean)) return false;
+        if (hasPrice(clean)) return false;
+        if (/^[▶★]/.test(clean)) return true;
+        return EMOJI_START.test(clean);
+      }
+
+      function hasPrice(line) {
+        return /\d[\d,]*\s*원/.test(line);
       }
 
       function isSeparatorLine(line) {
@@ -2549,8 +2711,10 @@
 
       function cleanTitle(line) {
         return cleanNote(line)
+          .replace(EMOJI_ALL, "")
           .replace(/[★▶◀]/g, "")
           .replace(/^[-–—]+/, "")
+          .replace(/\s{2,}/g, " ")
           .trim();
       }
 
@@ -2558,6 +2722,7 @@
         return String(line)
           .replace(/^[-–—]+\s*/, "")
           .replace(/^☆[-–—]*/, "")
+          .replace(/\s{2,}/g, " ")
           .trim();
       }
 
@@ -2574,12 +2739,13 @@
       }
 
       function inferCategory(title) {
+        if (/버스|대행|런|렙업|정복자|여정|캠페인|세팅|메피스토|공물|우버|보스/.test(title)) return "버스·대행";
         if (/골드|금화/.test(title)) return "재화";
-        if (/영혼|옵두|벨리알|껍데기|강철|극피|열쇠/.test(title)) return "재료";
-        if (/보석|호라드림|분광경|십자가/.test(title)) return "보석";
-        if (/룬|부적|문장|장비/.test(title)) return "룬세트";
-        if (/버스|대행|레벨|메피스토|공물/.test(title)) return "버스";
-        return "추천";
+        if (/보석|호라드림|분광경|십자가|엔트|공격|숙련|다채|풍족|보호|실용/.test(title)) return "보석";
+        if (/룬세트|룬/.test(title)) return "룬세트";
+        if (/부적|문장|횃불|위상|세트|템/.test(title)) return "템·부적";
+        if (/영혼|옵두|벼락불|열쇠|뿌리|껍데기|강철|극피|재료/.test(title)) return "재료";
+        return "기타";
       }
 
       function inferBadge(category, title) {
