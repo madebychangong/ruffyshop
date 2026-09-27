@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="우기상점 밀짚모자 로고">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6fb2ff" />
+      <stop offset="1" stop-color="#1f6fe5" />
+    </linearGradient>
+    <linearGradient id="straw" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffdd63" />
+      <stop offset="1" stop-color="#e9b323" />
+    </linearGradient>
+  </defs>
+  <!-- 하늘 배경 -->
+  <rect width="256" height="256" fill="url(#sky)" />
+  <!-- 햇살 -->
+  <circle cx="204" cy="54" r="36" fill="#fff3b0" opacity="0.95" />
+  <!-- 파도 -->
+  <path d="M0 196 C40 176 72 216 112 196 C152 176 184 216 224 196 C240 188 248 190 256 194 L256 256 L0 256 Z" fill="#0d3b8f" opacity="0.55" />
+  <path d="M0 216 C48 198 88 234 128 216 C168 198 208 234 256 216 L256 256 L0 256 Z" fill="#ffffff" opacity="0.28" />
+  <!-- 밀짚모자: 챙 -->
+  <ellipse cx="128" cy="150" rx="112" ry="32" fill="url(#straw)" stroke="#16202b" stroke-width="9" />
+  <!-- 밀짚모자: 크라운 -->
+  <path d="M70 142 C62 74 194 74 186 142 Q128 164 70 142 Z" fill="url(#straw)" stroke="#16202b" stroke-width="9" stroke-linejoin="round" />
+  <!-- 밀짚모자: 빨간 리본 -->
+  <path d="M66 118 Q128 140 190 118 L190 136 Q128 158 66 136 Z" fill="#e11d3a" stroke="#16202b" stroke-width="9" stroke-linejoin="round" />
+  <!-- 짚 결 -->
+  <path d="M100 102 Q128 92 156 102 M92 114 Q128 102 164 114" fill="none" stroke="#c98f12" stroke-width="5" stroke-linecap="round" opacity="0.8" />
+  <path d="M32 158 Q128 194 224 158" fill="none" stroke="#c98f12" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+</svg>

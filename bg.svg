@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <!-- 임시 배경: bg.jpg 를 넣으면 index.html 의 --bg-image 만 바꿔서 교체 -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4f9dff" />
+      <stop offset="0.55" stop-color="#b9dcff" />
+      <stop offset="1" stop-color="#ffe9a8" />
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a8cff" />
+      <stop offset="1" stop-color="#0d3b8f" />
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff9d0" />
+      <stop offset="0.55" stop-color="#ffd85a" />
+      <stop offset="1" stop-color="#ffb43a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="straw" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffdd63" />
+      <stop offset="1" stop-color="#e9b323" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)" />
+  <g transform="translate(1180 250)" fill="#ffe27a" opacity="0.35">
+    <path d="M0 0L-22 -520L22 -520Z" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(30)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(60)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(90)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(120)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(150)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(180)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(210)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(240)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(270)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(300)" />
+    <path d="M0 0L-22 -520L22 -520Z" transform="rotate(330)" />
+  </g>
+  <circle cx="1180" cy="250" r="170" fill="url(#sun)" />
+  <g fill="#ffffff" opacity="0.92">
+    <ellipse cx="300" cy="230" rx="150" ry="52" />
+    <ellipse cx="380" cy="200" rx="90" ry="60" />
+    <ellipse cx="230" cy="215" rx="80" ry="45" />
+    <ellipse cx="820" cy="150" rx="120" ry="40" />
+    <ellipse cx="880" cy="125" rx="70" ry="45" />
+    <ellipse cx="1420" cy="430" rx="130" ry="42" />
+    <ellipse cx="1480" cy="405" rx="70" ry="45" />
+  </g>
+  <path d="M0 640C200 600 400 690 600 640S1000 600 1200 645S1500 690 1600 640V1000H0Z" fill="url(#sea)" />
+  <path d="M0 730C250 695 450 770 700 730S1100 695 1300 740S1500 770 1600 730V1000H0Z" fill="#1f6fe5" opacity="0.65" />
+  <path d="M0 840C200 805 500 880 800 840S1300 805 1600 850V1000H0Z" fill="#0d3b8f" opacity="0.6" />
+  <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.55">
+    <path d="M120 690Q170 675 220 690" />
+    <path d="M960 705Q1010 690 1060 705" />
+    <path d="M1380 800Q1430 785 1480 800" />
+    <path d="M520 870Q570 855 620 870" />
+  </g>
+  <g transform="translate(150 430) rotate(-8 128 150) scale(1.7)">
+    <ellipse cx="128" cy="150" rx="112" ry="32" fill="url(#straw)" stroke="#16202b" stroke-width="7" />
+    <path d="M70 142C62 74 194 74 186 142Q128 164 70 142Z" fill="url(#straw)" stroke="#16202b" stroke-width="7" stroke-linejoin="round" />
+    <path d="M66 118Q128 140 190 118L190 136Q128 158 66 136Z" fill="#e11d3a" stroke="#16202b" stroke-width="7" stroke-linejoin="round" />
+    <path d="M100 102Q128 92 156 102M92 114Q128 102 164 114" fill="none" stroke="#c98f12" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+  </g>
+</svg>
